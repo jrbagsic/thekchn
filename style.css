@@ -1,18 +1,11 @@
-/* NAVBAR */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #353836;
-  color: white;
-  font-family: "Poppins", sans-serif;
-}
-
+/* NAVBAR */
 header a {
   text-decoration: none;
 }
@@ -36,7 +29,7 @@ header {
   color: #09c372;
 }
 
-ul {
+ul.navlist {
   list-style: none;
   height: 100%;
   display: flex;
@@ -44,16 +37,23 @@ ul {
   justify-content: space-around;
 }
 
-ul a {
+ul.mobile-menu {
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul.navlist a, ul.mobile-menu a {
   color: white;
 }
 
-ul li {
+ul.navlist li, ul.mobile-menu li {
   padding: 5px;
   margin-left: 10px;
 }
 
-ul li:hover {
+ul.navlist li:hover, ul.mobile-menu li:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -91,6 +91,7 @@ ul li:hover {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color: #1d1f1d;
 }
 
 .mobile-menu {
@@ -121,6 +122,9 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #353836;
+    color: white;
+    font-family: "Poppins", sans-serif;
 }
 
 /* HOME PAGE BANNER */
@@ -144,25 +148,236 @@ body{
     
 }
 
-/* SCROLL TO TOP */
-#myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: red; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+/* ARTISTS */
+.main{
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
-  #myBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+  h1 {
+      font-size: 24px;
+      font-weight: 400;
+      text-align: center;
+  }
+  
+  img {
+    height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  
+  .btn {
+    color: #ffffff;
+    padding: 0.8rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+  }
+  
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cards_item {
+    display: flex;
+    padding: 1rem;
+  }
+  
+  @media (min-width: 40rem) {
+    .cards_item {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 56rem) {
+    .cards_item {
+      width: 33.3333%;
+    }
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .card_content {
+    padding: 1rem;
+    background: #09c372;
+  }
+  
+  .card_title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px;
+  }
+  
+  .card_text {
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;    
+    font-weight: 400;
+  }
+
+/* FAQ */
+/* .container {
+    max-width: 980px;
+    margin-inline: auto;
+    padding: 100px 15px;
+} */
+
+.title {
+    font-size: clamp(26px, 5vw, 40px);
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.accordion-panel {
+    padding: 7px 21px;
+    margin-bottom: 24px;
+    border: 1px solid #777e91;
+    border-radius: 8px;
+}
+
+.accordion input {
+    display: none;
+}
+
+.accordion label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 15px;
+    padding-block: 7px;
+    color: #f4f5f6;
+    cursor: pointer;
+    transition: color 0.25s;
+}
+
+.accordion label:hover,
+.accordion input:checked + label {
+    color: #09c372;
+}
+
+.accordion i {
+    color: #09c372;
+}
+
+.accordion .close {
+    display: none;
+}
+
+.accordion input:checked + label .close {
+    display: block;
+}
+
+.accordion input:checked + label .open {
+    display: none;
+}
+
+.accordion-body {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s ease-in-out;
+}
+
+.accordion-answer {
+    font-size: 14px;
+    color: #777e91;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top left;
+    transition: opacity 0.75s, transform 0.15s;
+}
+
+.accordion input:checked ~ .accordion-body {
+    height: max-content;
+}
+
+.accordion input:checked ~ .accordion-body .accordion-answer {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* SCROLL TO TOP */
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 2px;
+    right: 0.1px;
+    z-index: 99;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 30px;
+  }
+  
+  .fa-arrow-up:hover {
+    color: #09c372;
+  }
+
+/* CONTACT */
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  div.contactform {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  label.formlabel {
+    color: #1d1f1d;
   }
 
 /* FOOTER */
