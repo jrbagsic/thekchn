@@ -14,7 +14,7 @@
     <header>
         <div id="brand">THE KCHN</div>
         <nav>
-          <ul>
+          <ul class="navlist">
             <li><a href="../index.html">HOME</a></li>
             <li><a href="artist.html">ARTISTS</a></li>
             <li><a href="faq.html">FAQ</a></li>
@@ -38,11 +38,22 @@
     <section id="contact">
         <div class="container">
             <h1>CONTACT</h1>
+            <div class="contactform">
+                <form action="/action_page.php">
+                    <label class="formlabel" for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name">
+                    <label class="formlabel" for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Your email">
+                    <label class="formlabel" for="message">Message</label>
+                        <input type="text" id="message" name="message" placeholder="Your message">
+                  <input type="submit" value="Submit">
+                </form>
+              </div>
         </div>
     </section>
 
     <!-- scroll to top -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
     <!-- footer -->
     <footer id="footer">
